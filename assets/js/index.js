@@ -6,6 +6,9 @@ function Book(author, title, numberOfPages, read) {
     this.numberOfPages = numberOfPages;
     this.read = read;
 
+    this.changeReadStatus = function() {
+        this.read = !read;
+    }
 }
 
 function addBookToLibrary(author, title, numberOfPages, read) {
