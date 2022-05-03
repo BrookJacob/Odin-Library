@@ -18,20 +18,35 @@
 
     <div class="modal">
         <div class="modal-content">
-            <form class="add-form">
-                <label class="label" for="author">Author: </label>
-                <input type="text" class="input" id="author">
-                <label class="label" for="title">Title: </label>
-                <input type="text" class="input" id="title">
-                <label class="label" for="pages">Number of Pages: </label>
-                <input type="number" class="input" id="pages">
+            <h1>Add A Book</h1>
+            <form>
+                <div class="author label-input">
+                    <label for="author">Author: </label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="title label-input">
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="pages label-input">
+                    <label for="pages">Number of Pages: </label>
+                    <input type="number" id="pages" required>
+                </div>
                 <p>Have you read this book: </p>
-                <label class="label" for="yes-read">Read</label>
-                <input type="radio" class="input" id="yes-read" name="read">
-                <label class="label" for="no-read">Haven't Read</label>
-                <input type="radio" class="input" id="no-read" name="read">
-                <button type="button" class="confirm">Add Book</button>
-                <button type="button" class="close">Close</button>
+                <div class="radio-buttons">
+                    <div class="yes-read">
+                        <input type="radio" class="radio" id="yes-read" name="read" value="true" required>
+                        <label for="yes-read">Read</label>
+                    </div>
+                    <div class="no-read">
+                        <input type="radio" class="radio" id="no-read" name="read" value="false">
+                        <label for="no-read">Haven't Read</label>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="confirm">Add Book</button>
+                    <button type="button" class="close">Close</button>
+                </div>
             </form>
         </div>
     </div>
