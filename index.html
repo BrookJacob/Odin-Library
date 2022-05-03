@@ -15,6 +15,26 @@
         <div class="books"></div>
         <button class="add button" type="button">Add Book</button>
     </main>
+
+    <div class="modal">
+        <div class="modal-content">
+            <form class="add-form">
+                <label class="label" for="author">Author: </label>
+                <input type="text" class="input" id="author">
+                <label class="label" for="title">Title: </label>
+                <input type="text" class="input" id="title">
+                <label class="label" for="pages">Number of Pages: </label>
+                <input type="number" class="input" id="pages">
+                <p>Have you read this book: </p>
+                <label class="label" for="yes-read">Read</label>
+                <input type="radio" class="input" id="yes-read" name="read">
+                <label class="label" for="no-read">Haven't Read</label>
+                <input type="radio" class="input" id="no-read" name="read">
+                <button type="button" class="confirm">Add Book</button>
+                <button type="button" class="close">Close</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
