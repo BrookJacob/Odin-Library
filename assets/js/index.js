@@ -1,12 +1,15 @@
 let myLibrary = [];
 
-function Book(author, title, numberOfPages, read) {
-    this.author = author;
-    this.title = title;
-    this.numberOfPages = numberOfPages;
-    this.read = read;
+class Book {
 
-    this.changeReadStatus = function() {
+    constructor(author, title, numberOfPages, read) {
+        this.author = author;
+        this.title = title;
+        this.numberOfPages = numberOfPages;
+        this.read = read;
+    }
+
+    changeReadStatus() {
         if (this.read == true) {
             this.read = false;
         } else {
@@ -96,14 +99,14 @@ function populateDOM(library) {
 
     const removeBook = Array.from(document.getElementsByClassName('remove-button'));
     removeBook.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            console.log(e);
             const book = myLibrary[button.parentNode.parentNode.dataset.index];
             console.log(book);
             const index = myLibrary.indexOf(book);
             console.log(index);
-            if (index > -1) {
-                myLibrary.splice(index, 1);
-            }
+            myLibrary.splice(index, 1);
+
             populateDOM(myLibrary);
             console.log(removeBook.length)
         });
@@ -162,18 +165,3 @@ readBook.forEach(button => {
         }
     });
 });
-
-const removeBook = Array.from(document.getElementsByClassName('remove-button'));
-removeBook.forEach(button => {
-    button.addEventListener('click', function() {
-        const book = myLibrary[button.parentNode.parentNode.dataset.index];
-        console.log(book);
-        const index = myLibrary.indexOf(book);
-        console.log(index);
-        if (index > -1) {
-            myLibrary.splice(index, 1);
-        }
-        populateDOM(myLibrary);
-        console.log(removeBook.length)
-    });
-})
