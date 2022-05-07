@@ -96,7 +96,7 @@ function populateDOM(library) {
 
     const removeBook = Array.from(document.getElementsByClassName('remove-button'));
     removeBook.forEach(button => {
-        button.addEventListener('mouseup', function() {
+        button.addEventListener('click', function() {
             const book = myLibrary[button.parentNode.parentNode.dataset.index];
             console.log(book);
             const index = myLibrary.indexOf(book);
@@ -116,15 +116,15 @@ const modal = document.getElementsByClassName('modal')[0];
 const openModal = document.getElementsByClassName('add')[0];
 const closeModal = document.getElementsByClassName('close')[0];
 
-openModal.addEventListener('mouseup', function() {
+openModal.addEventListener('click', function() {
     modal.style.display = "block";
 })
 
-closeModal.addEventListener('mouseup', function() {
+closeModal.addEventListener('click', function() {
     modal.style.display = "none";
 })
 
-window.addEventListener('mouseup', function() {
+window.addEventListener('click', function() {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -134,7 +134,7 @@ window.addEventListener('mouseup', function() {
 //Add Book To myLibrary
 const addBook = document.getElementsByClassName('confirm')[0];
 
-addBook.addEventListener('mouseup', function() {
+addBook.addEventListener('click', function() {
     const authorInput = document.getElementById('author').value;
     const titleInput = document.getElementById('title').value;
     const pagesInput = document.getElementById('pages').value;
@@ -148,7 +148,7 @@ populateDOM(myLibrary);
 
 const readBook = Array.from(document.getElementsByClassName('read-button'));
 readBook.forEach(button => {
-    button.addEventListener('mouseup', function() {
+    button.addEventListener('click', function() {
         const book = myLibrary[button.parentNode.parentNode.dataset.index];
         book.changeReadStatus();
         if (book.read == true) {
@@ -165,7 +165,7 @@ readBook.forEach(button => {
 
 const removeBook = Array.from(document.getElementsByClassName('remove-button'));
 removeBook.forEach(button => {
-    button.addEventListener('mouseup', function() {
+    button.addEventListener('click', function() {
         const book = myLibrary[button.parentNode.parentNode.dataset.index];
         console.log(book);
         const index = myLibrary.indexOf(book);
